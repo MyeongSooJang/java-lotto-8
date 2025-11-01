@@ -31,4 +31,13 @@ public class WinningNumbers {
         return lotto.countMatches(winningNumbers);
     }
 
+    public boolean containNumber(int input) {
+        for (Integer winningNumber : winningNumbers) {
+            if (winningNumber.equals(input)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
