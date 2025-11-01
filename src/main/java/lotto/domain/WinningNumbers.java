@@ -34,10 +34,10 @@ public class WinningNumbers {
     public boolean containNumber(int input) {
         for (Integer winningNumber : winningNumbers) {
             if (winningNumber.equals(input)) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 }
