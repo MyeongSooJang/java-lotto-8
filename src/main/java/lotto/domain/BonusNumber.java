@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import lotto.Lotto;
+
 public class BonusNumber {
     private final int bonusNumber;
 
@@ -21,5 +23,7 @@ public class BonusNumber {
         }
     }
 
-
+    public boolean matches(Lotto lotto) {
+        return lotto.containsNumber(bonusNumber);
+    }
 }
