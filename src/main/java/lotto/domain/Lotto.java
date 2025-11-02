@@ -1,4 +1,4 @@
-package lotto;
+package lotto.domain;
 
 import java.util.HashSet;
 import java.util.List;
@@ -63,4 +63,9 @@ public class Lotto {
         return false;
     }
 
+    public Rank match(WinningNumbers winningNumbers, BonusNumber bonusNumber) {
+        int matchCount = winningNumbers.countMatches(this);
+        boolean bonusMatch = bonusNumber.matches(this);
+        return Rank.from(matchCount, bonusMatch);
+    }
 }
