@@ -1,14 +1,15 @@
 package lotto.domain;
 
+import static lotto.constant.LottoConstant.LOTTO_NUMBER_COUNT;
+import static lotto.constant.LottoConstant.LOTTO_NUMBER_MAX;
+import static lotto.constant.LottoConstant.LOTTO_NUMBER_MIN;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
 public class Lotto {
-    private static final int LOTTO_NUMBER_COUNT = 6;
-    private static final int LOTTO_NUMBER_MIN = 1;
-    private static final int LOTTO_NUMBER_MAX = 45;
 
     private final List<Integer> numbers;
 

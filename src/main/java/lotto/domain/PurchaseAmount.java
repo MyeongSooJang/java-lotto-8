@@ -1,7 +1,8 @@
 package lotto.domain;
 
+import static lotto.constant.LottoConstant.LOTTO_PRICE;
+
 public class PurchaseAmount {
-    private static final int LOTTO_PRICE = 1000;
 
     private final int purchaseAmount;
 
