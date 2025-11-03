@@ -11,13 +11,13 @@ public class BonusNumber {
 
     private void validateRange(int input) {
         if (input < 1 || input > 45) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR] 보너스 번호는 1부터 45 사이의 숫자여야 합니다.");
         }
     }
 
     private void validateDuplicate(WinningNumbers winningNumbers, int input) {
         if (winningNumbers.containNumber(input)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR] 보너스 번호는 당첨 번호와 중복될 수 없습니다.");
         }
     }
 
