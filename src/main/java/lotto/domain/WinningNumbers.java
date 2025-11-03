@@ -1,5 +1,8 @@
 package lotto.domain;
 
+import static lotto.constant.ErrorMessage.DUPLICATE_LOTTO_NUMBER;
+import static lotto.constant.ErrorMessage.INVALID_WINNING_RANGE;
+import static lotto.constant.ErrorMessage.INVALID_WINNING_SIZE;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_COUNT;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_MAX;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_MIN;
@@ -20,20 +23,20 @@ public class WinningNumbers {
 
     private void validateCount(List<Integer> winningNumbers) {
         if (winningNumbers.size() != LOTTO_NUMBER_COUNT) {
-            throw new IllegalArgumentException("[ERROR] 당첨 번호는 6개여야 합니다.");
+            throw new IllegalArgumentException(INVALID_WINNING_SIZE);
         }
     }
 
     private void validateRange(List<Integer> winningNumbers) {
         for (Integer winningNumber : winningNumbers) {
             if (LOTTO_NUMBER_MIN > winningNumber || winningNumber > LOTTO_NUMBER_MAX) {
-                throw new IllegalArgumentException("[ERROR] 당첨 번호는 1부터 45 사이의 숫자여야 합니다.");
+                throw new IllegalArgumentException(INVALID_WINNING_RANGE);
             }
         }
     }
     private void validateDuplicate(List<Integer> numbers) {
         if (numbers.size() != new HashSet<>(numbers).size()) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 중복되지 않아야 합니다.");
+            throw new IllegalArgumentException(DUPLICATE_LOTTO_NUMBER);
         }
     }
 

@@ -1,5 +1,9 @@
 package lotto.view;
 
+import static lotto.constant.ErrorMessage.INVALID_BONUS_FORMAT;
+import static lotto.constant.ErrorMessage.INVALID_PURCHASE_FORMAT;
+import static lotto.constant.ErrorMessage.INVALID_WINNING_FORMAT;
+
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,9 @@
 package lotto.domain;
 
+import static lotto.constant.ErrorMessage.DUPLICATE_LOTTO_NUMBER;
+import static lotto.constant.ErrorMessage.INVALID_LOTTO_MAX;
+import static lotto.constant.ErrorMessage.INVALID_LOTTO_MIN;
+import static lotto.constant.ErrorMessage.INVALID_LOTTO_SIZE;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_COUNT;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_MAX;
 import static lotto.constant.LottoConstant.LOTTO_NUMBER_MIN;
@@ -23,14 +27,14 @@ public class Lotto {
 
     private void validate(List<Integer> numbers) {
         if (numbers.size() != LOTTO_NUMBER_COUNT) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
+            throw new IllegalArgumentException(INVALID_LOTTO_SIZE);
         }
     }
 
     private void validateMin(List<Integer> numbers) {
         for (Integer number : numbers) {
             if (number < LOTTO_NUMBER_MIN) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호는 1이상 이어야 합니다.");
+                throw new IllegalArgumentException(INVALID_LOTTO_MIN);
             }
         }
     }
@@ -38,14 +42,14 @@ public class Lotto {
     private void validateMax(List<Integer> numbers) {
         for (Integer number : numbers) {
             if (number > LOTTO_NUMBER_MAX) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호는 45미만 이어야 합니다.");
+                throw new IllegalArgumentException(INVALID_LOTTO_MAX);
             }
         }
     }
 
     private void validateDuplicate(List<Integer> numbers) {
         if (numbers.size() != new HashSet<>(numbers).size()) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 중복되지 않아야 합니다.");
+            throw new IllegalArgumentException(DUPLICATE_LOTTO_NUMBER);
         }
     }
 
