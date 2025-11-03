@@ -15,7 +15,7 @@ public class OutputView {
     private static final String PROFIT_RATE_MESSAGE = "총 수익률은 %.1f%%입니다.";
 
     public static void printPurchaseCount(int count) {
-        System.out.println(String.format(PURCHASE_COUNT_MESSAGE, count));
+        System.out.printf((PURCHASE_COUNT_MESSAGE) + "%n", count);
     }
 
     public static void printLottos(LottoBundle lottoBundle) {
@@ -60,6 +60,6 @@ public class OutputView {
 
     public static void printProfitRate(LottoResult result, PurchaseAmount purchaseAmount) {
         double profitRate = result.calculateProfitRate(purchaseAmount);
-        System.out.println(String.format(PROFIT_RATE_MESSAGE, profitRate));
+        System.out.printf((PROFIT_RATE_MESSAGE) + "%n", profitRate);
     }
 }
