@@ -1,6 +1,8 @@
 package lotto.domain;
 
 public class PurchaseAmount {
+    private static final int LOTTO_PRICE = 1000;
+
     private final int purchaseAmount;
 
     public PurchaseAmount(int purchaseAmount) {
@@ -23,13 +25,13 @@ public class PurchaseAmount {
     }
 
     private void validateThousandUnit(int purchaseAmount) {
-        if (purchaseAmount % 1000 != 0) {
+        if (purchaseAmount % LOTTO_PRICE != 0) {
             throw new IllegalArgumentException("[ERROR] 구입 금액은 1,000원 단위여야 합니다.");
         }
     }
 
     public int calculateLottoCount() {
-        return purchaseAmount / 1000;
+        return purchaseAmount / LOTTO_PRICE;
     }
 
     public int getAmount() {

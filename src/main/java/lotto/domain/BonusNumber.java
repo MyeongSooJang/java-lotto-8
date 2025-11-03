@@ -1,6 +1,9 @@
 package lotto.domain;
 
 public class BonusNumber {
+    private static final int BONUS_NUMBER_MIN = 1;
+    private static final int BONUS_NUMBER_MAX = 45;
+
     private final int bonusNumber;
 
     public BonusNumber(WinningNumbers winningNumbers, int input) {
@@ -10,7 +13,7 @@ public class BonusNumber {
     }
 
     private void validateRange(int input) {
-        if (input < 1 || input > 45) {
+        if (input < BONUS_NUMBER_MIN || input > BONUS_NUMBER_MAX) {
             throw new IllegalArgumentException("[ERROR] 보너스 번호는 1부터 45 사이의 숫자여야 합니다.");
         }
     }
