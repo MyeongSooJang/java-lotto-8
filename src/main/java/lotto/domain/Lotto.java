@@ -49,15 +49,9 @@ public class Lotto {
     }
 
     public int countMatches(List<Integer> input) {
-        int count = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            for (int j = 0; j < input.size(); j++) {
-                if (numbers.get(i).equals(input.get(j))) {
-                    count++;
-                }
-            }
-        }
-        return count;
+        return (int) numbers.stream()
+                .filter(input::contains)
+                .count();
     }
 
     public boolean containsNumber(int input) {
