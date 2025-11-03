@@ -33,4 +33,8 @@ public class LottoBundle {
         }
         return rankCounts;
     }
+
+    public List<Lotto> getLottos() {
+        return lottos;
+    }
 }
