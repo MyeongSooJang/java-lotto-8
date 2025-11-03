@@ -31,7 +31,7 @@ public class InputView {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자여야 합니다.");
+            throw new IllegalArgumentException(INVALID_PURCHASE_FORMAT);
         }
     }
 
@@ -62,7 +62,7 @@ public class InputView {
         try {
             return Integer.parseInt(token);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자여야 합니다.");
+            throw new IllegalArgumentException(INVALID_WINNING_FORMAT);
         }
     }
 
@@ -82,7 +82,7 @@ public class InputView {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 보너스 번호는 숫자여야 합니다.");
+            throw new IllegalArgumentException(INVALID_BONUS_FORMAT);
         }
     }
 }
